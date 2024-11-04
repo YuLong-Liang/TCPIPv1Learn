@@ -12,3 +12,17 @@ sock -i -s -P100000 5555
 
 该命令在从网络上读数据之前休眠 100 000秒（2 7 . 8小时）。
 客户运行在主机 b s d i上，并向服务器的 5 5 5 5端口执行 1 0 2 4字节的写操作。
+
+编译执行服务端
+
+```bash
+gcc sockServ.c -o sockServ
+./sockServ -i -s -P100000 5555 
+```
+
+编译执行客户端
+
+```bash
+gcc sockClient.c -o sockClient
+./sockClient 127.0.0.1 5555
+```

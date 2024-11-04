@@ -31,7 +31,7 @@ int main(int argc, char *argv[]) {
     sleep_time = atoi(argv[3] + 2);
     ser_port = atoi(argv[4]);
 
-    if (0 > socket(PF_INET, SOCK_STREAM, IPPROTO_TCP)) {
+    if (0 > (serv_sock = socket(PF_INET, SOCK_STREAM, IPPROTO_TCP))) {
         perror("socket() failed");
         exit(1);
     }
